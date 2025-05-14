@@ -205,3 +205,53 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+  devise:
+    registrations:
+      edit:
+        title: "アカウント編集"
+        update: "更新する"
+        leave_blank: "（変更しない場合は空欄）"
+        need_current_password: "（変更を反映するには現在のパスワードが必要です）"
+        pending_confirmation: "確認中のメールアドレス:"
+        cancel_title: "アカウントを削除"
+        cancel_account: "アカウントを削除する"
+        confirm_cancel: "本当に削除してもよろしいですか？"
+        unhappy: "退会をご希望ですか？"
+      new:
+        title: "アカウント登録"
+        submit: "登録する"
+    shared:
+      password_minimum: "%{count}文字以上で入力してください"
+      links:
+        sign_in: "ログイン"
+        sign_up: "アカウントを作成"
+        forgot_your_password: "パスワードをお忘れですか？"
+        didnt_receive_confirmation: "確認メールが届いていませんか？"
+        didnt_receive_unlock: "ロック解除メールが届いていませんか？"
+        sign_in_with_provider: "%{provider}でログイン"
+    confirmations:
+      new:
+        title: "確認メールを再送信"
+        resend: "確認メールを再送信する"
+    passwords:
+      edit:
+        title: "パスワードを変更"
+        submit: "パスワードを変更する"
+        password_length: "%{count}文字以上で入力してください"
+      new:
+        title: "パスワードをお忘れですか？"
+        submit: "パスワード再設定用メールを送信する"
+  activerecord:
+    attributes:
+      user:
+        email: "メールアドレス"
+        password: "新しいパスワード"
+        password_confirmation: "パスワード（確認）"
+        current_password: "現在のパスワード"
+        postal_code: "郵便番号"
+        address: "住所"
+        introduction: "自己紹介"
+  
+  common:
+    back: "戻る"
+
