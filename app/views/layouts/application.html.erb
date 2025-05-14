@@ -11,6 +11,10 @@
   </head>
 
   <body class="<%= params[:action] %>">
+  <div class="locale-switcher">
+    <%= link_to "日本語", url_for(locale: :ja) %> |
+    <%= link_to "English", url_for(locale: :en) %>
+  </div>
     <%= yield %>
   </body>
 </html>
