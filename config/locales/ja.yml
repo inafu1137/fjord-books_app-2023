@@ -182,6 +182,11 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   views:
+    pagination:
+      first: "最初"
+      last: "最後"
+      next: "次"
+      previous: "前"
     common:
       show: "この%{name}を表示"
       edit: "この%{name}を編集"
