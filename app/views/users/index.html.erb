@@ -1,0 +1,10 @@
+<h1>ユーザー一覧</h1>
+
+<% @users.each do |user| %>
+  <div class="card">
+    <p><strong>メール:</strong> <%= user.email %></p>
+    <p><%= link_to '詳細を見る', user_path(user) %></p>
+  </div>
+<% end %>
+
+<%= paginate @users %>
