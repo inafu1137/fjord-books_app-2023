@@ -1,4 +1,7 @@
 <div id="<%= dom_id user %>">
+  <% if user.icon.attached? %>
+    <%= image_tag user.icon.variant(resize_to_limit: [150, 200]), alt: "#{user.name}のアイコン" %>
+  <% end %>
 
   <p>
     <strong><%= User.human_attribute_name(:email) %>:</strong>
