@@ -1,11 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="show-item">
-  <%= render @book %>
+    <%= render @book %>
 </div>
 
 <nav class="page-nav">
-  <%= link_to t("Edit this book"), edit_book_path(@book) %> |
-  <%= link_to t("Back to books"), books_path %>
-  <%= button_to t("Destroy this book"), @book, method: :delete %>
+    <%= link_to t("views.books.show.Edit this book"), edit_book_path(@book) %> |
+    <%= link_to t("views.books.show.Back to books"), books_path %>
+    <%= button_to t("views.books.show.Destroy this book"), @book, method: :delete %>
 </nav>
