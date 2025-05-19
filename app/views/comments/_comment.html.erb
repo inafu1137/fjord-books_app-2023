@@ -1,0 +1,10 @@
+<p><%= comment.body %></p>
+<p>投稿者: <%= comment.user.name || comment.user.email %></p>
+<p>投稿日時: <%= l(comment.created_at, format: :short) %></p>
+
+<% if comment.user == current_user %>
+<%= form_with model: comment, method: :delete, local: true do |f| %>
+<%= link_to '編集', edit_comment_path(comment) %> |
+<%= link_to '削除', comment_path(comment), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+<% end %>
+<% end %>
