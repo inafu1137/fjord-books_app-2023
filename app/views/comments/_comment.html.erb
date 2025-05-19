@@ -3,8 +3,8 @@
 <p>投稿日時: <%= l(comment.created_at, format: :short) %></p>
 
 <% if comment.user == current_user %>
-<%= form_with model: comment, method: :delete, local: true do |f| %>
 <%= link_to '編集', edit_comment_path(comment) %> |
-<%= link_to '削除', comment_path(comment), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+<%= form_with url: comment_path(comment), method: :delete, local: true do %>
+<%= submit_tag '削除', data: { confirm: '本当に削除しますか？' } %>
 <% end %>
 <% end %>
