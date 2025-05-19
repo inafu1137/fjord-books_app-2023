@@ -9,3 +9,20 @@ ja:
         memo: メモ  #g
         picture: 写真  #g
         title: タイトル  #g
+  views:
+    books:
+      index:
+        Books: "書籍一覧"
+        Show this book: "この本を表示"
+        New Book: "新しい本"
+      edit:
+        Editing book: "本の編集"
+        Show this book: "この本を表示"
+        Back to books: "書籍一覧に戻る"
+      new:
+        New Book: "新しい本"
+        Back to books: "書籍一覧に戻る"
+      show:
+        Edit this book: "この本を編集"
+        Back to books: "書籍一覧に戻る"
+        Destroy this book: "この本を削除"

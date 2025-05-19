@@ -1,16 +1,5 @@
 ---
 ja:
-  Books: "本"
-  New book: "新しい本"
-  Edit this book: "本を編集"
-  Destroy this book: "本を削除"
-  Show this book: "本を表示"
-  Back to books: "本に戻る"
-  Title: "タイトル"
-  Memo: "メモ"
-  Author: "著者"
-  Picture: "画像"
-
   activerecord:
     errors:
       messages:
