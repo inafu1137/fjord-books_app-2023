@@ -1,0 +1,13 @@
+<%= form_with model: @report, local: true do |form| %>
+  <div>
+    <%= form.label :title, 'タイトル' %>
+    <%= form.text_field :title, required: true %>
+  </div>
+  <div>
+    <%= form.label :body, '本文' %>
+    <%= form.text_area :body, required: true %>
+  </div>
+  <div>
+    <%= form.submit '投稿' %>
+  </div>
+<% end %>

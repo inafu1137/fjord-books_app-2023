@@ -1,0 +1,16 @@
+<h1><%= @report.title %></h1>
+<p><%= @report.body %></p>
+<p>投稿者: <%= @report.user.name || @report.user.email %></p>
+<p>投稿日: <%= l(@report.created_at, format: :short) %></p>
+
+<h2>コメント一覧</h2>
+<%= render @report.comments %>
+
+<h2>コメント投稿</h2>
+<%= render partial: 'comments/form', locals: { commentable: @report } %>
+
+<div>
+  <%= link_to "この日報を編集", edit_report_path(@report) %> |
+  <%= link_to "日報一覧に戻る", reports_path %>
+  <%= button_to "この日報を削除", @report, method: :delete, data: { confirm: '本当に削除しますか？' } %>
+</div>

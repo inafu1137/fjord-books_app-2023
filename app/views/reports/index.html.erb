@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>日報</h1>
+
+<div id="reports">
+  <% @reports.each do |report| %>
+    <%= render report %>
+    <p>
+      <%= link_to "日報を表示", report %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "日報を作成", new_report_path %>
