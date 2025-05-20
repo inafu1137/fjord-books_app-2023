@@ -4,7 +4,7 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email, t('activerecord.attributes.user.email') %><br />
+    <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password, t('activerecord.attributes.user.password') %>
+    <%= f.label :password %>
     <i><%= t('devise.registrations.edit.leave_blank') %></i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
@@ -23,28 +23,28 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation') %><br />
+    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password, t('activerecord.attributes.user.current_password') %>
+    <%= f.label :current_password %>
     <i><%= t('devise.registrations.edit.need_current_password') %></i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :postal_code, t('activerecord.attributes.user.postal_code') %><br />
+    <%= f.label :postal_code %><br />
     <%= f.text_field :postal_code %>
   </div>
 
   <div class="field">
-    <%= f.label :address, t('activerecord.attributes.user.address') %><br />
+    <%= f.label :address %><br />
     <%= f.text_field :address %>
   </div>
 
   <div class="field">
-    <%= f.label :introduction, t('activerecord.attributes.user.introduction') %><br />
+    <%= f.label :introduction %><br />
     <%= f.text_area :introduction %>
   </div>
 

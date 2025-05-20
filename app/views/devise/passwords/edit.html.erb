@@ -5,7 +5,7 @@
   <%= f.hidden_field :reset_password_token %>
 
   <div class="field">
-    <%= f.label :password, t('activerecord.attributes.user.password') %><br />
+    <%= f.label :password %><br />
     <% if @minimum_password_length %>
       <em>(<%= t('devise.passwords.edit.password_length', count: @minimum_password_length) %>)</em><br />
     <% end %>
@@ -13,7 +13,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation') %><br />
+    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
