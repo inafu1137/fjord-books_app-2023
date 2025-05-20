@@ -3,16 +3,16 @@
 <h1><%= t('views.books.index.Books') %></h1>
 
 <div id="books" class="index-items">
-    <% @books.each do |book| %>
+  <% @books.each do |book| %>
     <div class="index-item">
-        <%= render book %>
-        <p>
-            <%= link_to t("views.books.index.Show this book"), book %>
-        </p>
+      <%= render book %>
+      <p>
+        <%= link_to t("views.books.index.Show this book"), book %>
+      </p>
     </div>
-    <% end %>
+  <% end %>
 </div>
 
 <nav class="page-nav">
-    <%= link_to t("views.books.index.New Book"), new_book_path %>
+  <%= link_to t("views.books.index.New Book"), new_book_path %>
 </nav>
