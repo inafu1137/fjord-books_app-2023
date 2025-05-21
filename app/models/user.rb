@@ -10,9 +10,7 @@ class User < ApplicationRecord
   private
 
   def icon_format
-    return unless icon.attached?
-
-    return if icon.content_type.in?(%w[image/jpeg image/png image/gif])
+    return unless icon.attached? && !icon.content_type.in?(%w[image/jpeg image/png image/jpg])
 
     errors.add(:icon, 'はjpg, png, gif形式のみアップロード可能です')
   end
