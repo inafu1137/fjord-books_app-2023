@@ -1,29 +1,33 @@
 ja:
   activerecord:
     models:
-      book: 本  #g
-
+      book: 書籍
     attributes:
       book:
-        author: 著者  #g
-        memo: メモ  #g
-        picture: 写真  #g
-        title: タイトル  #g
+        author: 著者
+        memo: メモ
+        picture: 写真
+        title: タイトル
   views:
+    common:
+      destroy: "この%{name}を削除"
+      edit: "この%{name}を編集"
+      back: "%{name}一覧に戻る"
+      show: "この%{name}を表示"
+      new: "新しい%{name}"
     books:
       index:
         title: "書籍一覧"
-        show: "この本を表示"
-        new: "新しい本"
+        show: "%{name}を表示"
+        new: "新しい%{name}"
       edit:
-        title: "本の編集"
-        show: "この本を表示"
-        back: "書籍一覧に戻る"
+        title: "%{name}の編集"
+        show: "%{name}を表示"
+        back: "%{name}一覧に戻る"
       new:
-        title: "新しい本"
-        back: "書籍一覧に戻る"
+        title: "新しい%{name}"
+        back: "%{name}一覧に戻る"
       show:
-        edit: "この本を編集"
-        back: "書籍一覧に戻る"
-        destroy: "この本を削除"
-
+        edit: "%{name}を編集"
+        back: "%{name}一覧に戻る"
+        destroy: "%{name}を削除"
