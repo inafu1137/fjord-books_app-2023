@@ -183,8 +183,8 @@ ja:
     pm: 午後
   views:
     common:
-      show: "この%{name}を表示"
-      edit: "この%{name}を編集"
+      show: "%{name}を表示"
+      edit: "編集"
       destroy: "この%{name}を削除"
       new: "%{name}の新規作成"
       back: "%{name}の一覧に戻る"
