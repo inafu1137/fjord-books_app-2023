@@ -1,0 +1,33 @@
+en:
+  activerecord:
+    models:
+      book: Book
+    attributes:
+      book:
+        author: Author
+        memo: Memo
+        picture: Picture
+        title: Title
+  views:
+    common:
+      destroy: "Delete this %{name}"
+      edit: "Edit this %{name}"
+      back: "Back to %{name} list"
+      show: "Show this %{name}"
+      new: "New %{name}"
+    books:
+      index:
+        title: "Book List"
+        show: "Show %{name}"
+        new: "New %{name}"
+      edit:
+        title: "Edit %{name}"
+        show: "Show %{name}"
+        back: "Back to %{name} list"
+      new:
+        title: "New %{name}"
+        back: "Back to %{name} list"
+      show:
+        edit: "Edit %{name}"
+        back: "Back to %{name} list"
+        destroy: "Delete %{name}"
