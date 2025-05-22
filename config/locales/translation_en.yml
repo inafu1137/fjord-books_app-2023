@@ -10,24 +10,14 @@ en:
         title: Title
   views:
     common:
+      index: "%{name} list"
       destroy: "Delete this %{name}"
       edit: "Edit this %{name}"
       back: "Back to %{name} list"
       show: "Show this %{name}"
       new: "New %{name}"
-    books:
-      index:
-        title: "Book List"
-        show: "Show %{name}"
-        new: "New %{name}"
-      edit:
-        title: "Edit %{name}"
-        show: "Show %{name}"
-        back: "Back to %{name} list"
-      new:
-        title: "New %{name}"
-        back: "Back to %{name} list"
-      show:
-        edit: "Edit %{name}"
-        back: "Back to %{name} list"
-        destroy: "Delete %{name}"
+  messages:
+    common:
+      notice_create: "%{name} was created."
+      notice_update: "%{name} was updated."
+      notice_destroy: "%{name} was deleted."

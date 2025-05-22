@@ -10,24 +10,14 @@ ja:
         title: タイトル
   views:
     common:
-      destroy: "この%{name}を削除"
-      edit: "この%{name}を編集"
+      index: "%{name}一覧"
+      destroy: "%{name}を削除"
+      edit: "%{name}を編集"
       back: "%{name}一覧に戻る"
-      show: "この%{name}を表示"
+      show: "%{name}を表示"
       new: "新しい%{name}"
-    books:
-      index:
-        title: "書籍一覧"
-        show: "%{name}を表示"
-        new: "新しい%{name}"
-      edit:
-        title: "%{name}の編集"
-        show: "%{name}を表示"
-        back: "%{name}一覧に戻る"
-      new:
-        title: "新しい%{name}"
-        back: "%{name}一覧に戻る"
-      show:
-        edit: "%{name}を編集"
-        back: "%{name}一覧に戻る"
-        destroy: "%{name}を削除"
+  messages:
+    common:
+      notice_create: "%{name}を作成しました。"
+      notice_update: "%{name}を更新しました。"
+      notice_destroy: "%{name}を削除しました。"
