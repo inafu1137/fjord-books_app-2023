@@ -1,0 +1,23 @@
+en:
+  activerecord:
+    models:
+      book: Book
+    attributes:
+      book:
+        author: Author
+        memo: Memo
+        picture: Picture
+        title: Title
+  views:
+    common:
+      index: "%{name} list"
+      destroy: "Delete this %{name}"
+      edit: "Edit this %{name}"
+      back: "Back to %{name} list"
+      show: "Show this %{name}"
+      new: "New %{name}"
+  messages:
+    common:
+      notice_create: "%{name} was created."
+      notice_update: "%{name} was updated."
+      notice_destroy: "%{name} was deleted."

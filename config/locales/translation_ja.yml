@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      book: 書籍
+    attributes:
+      book:
+        author: 著者
+        memo: メモ
+        picture: 写真
+        title: タイトル
+  views:
+    common:
+      index: "%{name}一覧"
+      destroy: "%{name}を削除"
+      edit: "%{name}を編集"
+      back: "%{name}一覧に戻る"
+      show: "%{name}を表示"
+      new: "新しい%{name}"
+  messages:
+    common:
+      notice_create: "%{name}を作成しました。"
+      notice_update: "%{name}を更新しました。"
+      notice_destroy: "%{name}を削除しました。"
