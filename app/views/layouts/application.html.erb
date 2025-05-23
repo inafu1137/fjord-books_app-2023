@@ -11,6 +11,21 @@
   </head>
 
   <body class="<%= params[:action] %>">
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    <p class="navbar-text float-right">
+    <% if user_signed_in? %>
+      <%= link_to 'マイページ', user_path(current_user) %>
+      <%= link_to 'ユーザー一覧', users_path %>
+      <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'ログイン', new_user_session_path %>
+    <% end %>
+    </p>
     <%= yield %>
   </body>
 </html>

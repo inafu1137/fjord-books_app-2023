@@ -1,0 +1,10 @@
+<h1><%= t('views.common.title_index', name: 'ユーザー') %></h1>
+
+<% @users.each do |user| %>
+  <div class="card">
+    <p><strong>メール:</strong> <%= user.email %></p>
+    <p><%= link_to t('views.common.show', name: 'ユーザー'), user_path(user) %></p>
+  </div>
+<% end %>
+
+<%= paginate @users %>
