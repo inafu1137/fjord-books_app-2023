@@ -1,14 +1,12 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>日報</h1>
+<h1><%= t('views.common.title_index', name: i18n_pluralize(Report.model_name.human)) %></h1>
 
 <div id="reports">
   <% @reports.each do |report| %>
     <%= render report %>
     <p>
-      <%= link_to "日報を表示", report %>
+      <%= link_to t('views.common.show', name: Report.model_name.human.downcase), report %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "日報を作成", new_report_path %>
+<%= link_to t('views.common.new', name: Report.model_name.human.downcase), new_report_path %>
