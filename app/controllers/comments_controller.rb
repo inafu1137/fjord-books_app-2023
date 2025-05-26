@@ -56,6 +56,8 @@ class CommentsController < ApplicationController
       Report.find(params[:report_id])
     elsif params[:book_id]
       Book.find(params[:book_id])
+    else
+      raise ActiveRecord::RecordNotFound, 'コメントの対象が見つかりません'
     end
   end
 end
