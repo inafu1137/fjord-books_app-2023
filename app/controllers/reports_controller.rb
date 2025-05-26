@@ -37,7 +37,7 @@ class ReportsController < ApplicationController
   end
 
   def destroy
-    @report.destroy
+    @report.destroy!
     redirect_to reports_path, notice: '日報が削除されました'
   end
 
