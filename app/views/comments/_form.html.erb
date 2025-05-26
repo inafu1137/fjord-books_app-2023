@@ -1,7 +1,7 @@
 <%= form_with(model: [commentable, Comment.new], local: true) do |f| %>
   <div>
-    <%= f.label :body, 'コメント' %>
+    <%= f.label :body, Comment.human_attribute_name(:body), style: "display: block" %>
     <%= f.text_area :body, required: true %>
   </div>
-  <%= f.submit 'コメントする' %>
+  <%= f.submit %>
 <% end %>
