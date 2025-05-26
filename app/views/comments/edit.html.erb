@@ -1,0 +1,24 @@
+<h1><%= t('views.common.title_edit', name: Comment.model_name.human.downcase) %></h1>
+
+<%= form_with(model: @comment, local: true) do |form| %>
+<% if @comment.errors.any? %>
+<div class="error_messages">
+    <ul>
+        <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="field">
+    <%= form.text_area :body, required: true %>
+</div>
+
+<div class="actions">
+    <%= form.submit %>
+</div>
+<% end %>
+
+<% commentable_class = @comment.commentable.class %>
+<%= link_to t('views.common.back', name: i18n_pluralize(commentable_class.model_name.human.downcase)), url_for(controller: commentable_class.to_s.tableize) %>

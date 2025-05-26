@@ -1,0 +1,8 @@
+<div id="<%= dom_id report %>">
+  <h1><%= report.title %></h1>
+
+  <p><%= report.body %></p>
+  <p>投稿者: <%= report.user.name || report.user.email %></p>
+  <p>投稿日: <%= l(report.created_at, format: :short) %></p>
+
+</div>

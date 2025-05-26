@@ -1,0 +1,11 @@
+<p><%= comment.body %></p>
+<p>投稿者: <%= comment.user.name || comment.user.email %></p>
+<p>投稿日時: <%= l(comment.created_at, format: :short) %></p>
+
+<% if comment.user == current_user %>
+  <%= link_to t('views.common.edit', name: Comment.model_name.human.downcase), edit_comment_path(comment) %> |
+  <%= form_with url: comment_path(comment), method: :delete, local: true do %>
+    <%= submit_tag t('views.common.destroy', name: Comment.model_name.human.downcase), data: { confirm: t('views.common.confirm_destroy', name: Comment.model_name.human.downcase) } %>
+  <% end %>
+<% end %>
+
