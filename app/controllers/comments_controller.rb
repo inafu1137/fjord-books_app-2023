@@ -2,7 +2,7 @@
 
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_commnet, only: :destroy
+  before_action :set_comment, only: :destroy
   before_action :authorize_user!, only: :destroy
 
   def create
@@ -39,7 +39,7 @@ class CommentsController < ApplicationController
 
   private
 
-  def set_commnet
+  def set_comment
     @comment = Comment.find(params[:id])
   end
 
