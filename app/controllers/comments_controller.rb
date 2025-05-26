@@ -32,9 +32,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
     authorize_user!
-    @comment.destroy
+    @comment.destroy!
     redirect_to @comment.commentable, notice: 'コメントを削除しました'
   end
 
