@@ -9,9 +9,7 @@ class ReportsController < ApplicationController
     @reports = Report.all
   end
 
-  def show
-    @comment = Comment.new
-  end
+  def show; end
 
   def new
     @report = Report.new
