@@ -26,14 +26,12 @@ class Report < ApplicationRecord
   private
 
   def update_mentions
-    transaction do
-      outgoing_mentions.destroy_all
-      extract_report_urls.each do |report_id|
-        next if report_id.to_i == id
+    outgoing_mentions.destroy_all
+    extract_report_urls.each do |report_id|
+      next if report_id.to_i == id
 
-        mentioned_report = Report.find_by(id: report_id)
-        mentioning_reports << mentioned_report if mentioned_report
-      end
+      mentioned_report = Report.find_by(id: report_id)
+      mentioning_reports << mentioned_report if mentioned_report
     end
   end
 
