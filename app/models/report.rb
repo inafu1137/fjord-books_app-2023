@@ -27,7 +27,7 @@ class Report < ApplicationRecord
 
   def update_mentions
     outgoing_mentions.destroy_all
-    extract_report_urls.each do |report_id|
+    extract_report_ids_from_content.each do |report_id|
       next if report_id.to_i == id
 
       mentioned_report = Report.find_by(id: report_id)
@@ -35,7 +35,7 @@ class Report < ApplicationRecord
     end
   end
 
-  def extract_report_urls
+  def extract_report_ids_from_content
     content.to_s.scan(%r{\bhttp://localhost:3000/reports/(\d+)\b}).flatten.uniq
   end
 end
