@@ -27,12 +27,9 @@ class Report < ApplicationRecord
 
   def update_mentions
     outgoing_mentions.destroy_all
-    extract_report_ids_from_content.each do |report_id|
-      next if report_id.to_i == id
-
-      mentioned_report = Report.find_by(id: report_id)
-      mentioning_reports << mentioned_report if mentioned_report
-    end
+    mentioned_ids = extract_report_ids_from_content.map(&:to_i).uniq - [id]
+    available_report_ids = Report.where(id: mentioned_ids).pluck(:id)
+    mentioning_reports << Report.where(id: available_report_ids)
   end
 
   def extract_report_ids_from_content
