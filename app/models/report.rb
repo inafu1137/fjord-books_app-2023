@@ -36,6 +36,6 @@ class Report < ApplicationRecord
   end
 
   def extract_report_urls
-    content.to_s.scan(%r{https?://[^/\s]+/reports/(\d+)}).flatten.uniq
+    content.to_s.scan(%r{\bhttp://localhost:3000/reports/(\d+)\b}).flatten.uniq
   end
 end
