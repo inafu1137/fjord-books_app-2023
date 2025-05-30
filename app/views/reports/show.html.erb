@@ -4,6 +4,26 @@
   <%= render @report %>
 </div>
 
+<div class="mentions-section">
+  <div class="mentioned-reports">
+    <h2><%= t('.mentioned_reports_title') %></h2>
+    <% if @report.mentioned_reports.exists? %>
+      <ul class="mention-list">
+        <% @report.mentioned_reports.each do |report| %>
+          <li class="mention-item">
+            <%= link_to report_path(report) do %>
+              <%= report.title %>
+              <small>(<%= l report.created_at, format: :short %>)</small>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="no-mentions"><%= t('.no_mentioned_reports') %></p>
+    <% end %>
+  </div>
+</div>
+
 <%= render 'shared/comments', commentable: @report %>
 
 <nav class="page-nav">

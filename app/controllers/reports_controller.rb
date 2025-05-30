@@ -8,7 +8,7 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report = Report.find(params[:id])
+    @report = Report.includes(:mentioning_reports, :mentioned_reports).find(params[:id])
   end
 
   # GET /reports/new

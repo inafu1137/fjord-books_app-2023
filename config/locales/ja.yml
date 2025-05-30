@@ -221,3 +221,9 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+  reports:
+    show:
+      mentioning_reports_title: "この日報が言及している日報"
+      mentioned_reports_title: "この日報を参照している日報"
+      no_mentioning_reports: "言及している日報はありません"
+      no_mentioned_reports: "この日報を参照している日報はありません"
