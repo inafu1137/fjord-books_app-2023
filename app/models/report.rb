@@ -28,8 +28,7 @@ class Report < ApplicationRecord
   def update_mentions
     outgoing_mentions.destroy_all
     mentioned_ids = extract_report_ids_from_content.map(&:to_i).uniq - [id]
-    available_report_ids = Report.where(id: mentioned_ids).pluck(:id)
-    mentioning_reports << Report.where(id: available_report_ids)
+    mentioning_reports << Report.where(id: mentioned_ids)
   end
 
   def extract_report_ids_from_content
