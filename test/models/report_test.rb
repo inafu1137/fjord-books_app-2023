@@ -3,7 +3,33 @@
 require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  fixtures :users, :reports
+
+  test '#editable? returns true if user is owner' do
+    report = reports(:report_one)
+    user = users(:user_one)
+    assert report.editable?(user)
+  end
+
+  test '#editable? returns false if user is not owner' do
+    report = reports(:report_one)
+    user = users(:user_two)
+    assert_not report.editable?(user)
+  end
+
+  test '#created_on returns the date part of created_at' do
+    report = reports(:report_one)
+    assert_equal report.created_at.to_date, report.created_on
+  end
+
+  test 'save_mentions updates mentioning_reports after save' do
+    author = users(:user_one)  # test/fixtures/users.yml にあるユーザーを指定
+    mentioned_report = Report.create!(user: author, title: 'Mentioned', content: 'Hello')
+
+    report = Report.new(user: author, title: 'Main report')
+    report.content = "これはメンションです → http://localhost:3000/reports/#{mentioned_report.id}"
+    report.save!
+
+    assert_includes report.mentioning_reports.map(&:id), mentioned_report.id
+  end
 end
