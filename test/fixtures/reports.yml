@@ -1,11 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+report_one:
+  user: user_one
+  title: "Report One"
+  content: "This is a sample report content without mentions."
+  created_at: <%= Time.zone.now - 1.day %>
+  updated_at: <%= Time.zone.now - 1.day %>
 
-one:
-  user: one
-  title: MyString
-  content: MyText
-
-two:
-  user: two
-  title: MyString
-  content: MyText
+report_two:
+  user: user_two
+  title: "Report Two"
+  content: "Report mentioning http://localhost:3000/reports/1"
+  created_at: <%= Time.zone.now %>
+  updated_at: <%= Time.zone.now %>
