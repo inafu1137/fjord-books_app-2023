@@ -19,7 +19,11 @@ class ReportTest < ActiveSupport::TestCase
 
   test '#created_on returns the date part of created_at' do
     report = reports(:report_one)
-    assert_equal report.created_at.to_date, report.created_on
+    fixed_time = Time.zone.local(2023, 12, 31, 23, 59, 59)
+    report.created_at = fixed_time
+    report.save!
+
+    assert_equal fixed_time.to_date, report.created_on
   end
 
   test 'save_mentions updates mentioning_reports after save' do
