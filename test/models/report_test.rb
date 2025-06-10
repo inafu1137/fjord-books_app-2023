@@ -26,7 +26,7 @@ class ReportTest < ActiveSupport::TestCase
     assert_equal fixed_time.to_date, report.created_on
   end
 
-  test 'save_mentions updates mentioning_reports after save' do
+  test 'save_mentions adds new mentions' do
     author = users(:user_one)  # test/fixtures/users.yml にあるユーザーを指定
     mentioned_report = Report.create!(user: author, title: 'Mentioned', content: 'Hello')
 
@@ -35,5 +35,31 @@ class ReportTest < ActiveSupport::TestCase
     report.save!
 
     assert_includes report.mentioning_reports.map(&:id), mentioned_report.id
+  end
+
+  test 'save_mentions removes old mentions' do
+    author = users(:user_one)
+    mentioned_report = Report.create!(user: author, title: 'Mentioned', content: 'Hello')
+
+    report = Report.create!(user: author, title: 'Main', content: "http://localhost:3000/reports/#{mentioned_report.id}")
+    report.content = 'メンション削除済み'
+    report.save!
+    report.reload
+
+    assert_empty report.mentioning_reports
+  end
+
+  test 'save_mentions updates changed mentions' do
+    author = users(:user_one)
+    mentioned1 = Report.create!(user: author, title: 'Mentioned 1', content: 'Hello')
+    mentioned2 = Report.create!(user: author, title: 'Mentioned 2', content: 'Hi')
+
+    report = Report.create!(user: author, title: 'Main', content: "→ http://localhost:3000/reports/#{mentioned1.id}")
+    report.content = "→ http://localhost:3000/reports/#{mentioned2.id}"
+    report.save!
+    report.reload
+
+    assert_not_includes report.mentioning_reports.map(&:id), mentioned1.id
+    assert_includes report.mentioning_reports.map(&:id), mentioned2.id
   end
 end
